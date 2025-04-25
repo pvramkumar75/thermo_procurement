@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Vendor Quote</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Submit Vendor Quote</h2>
+    <form id="vendorForm">
+      <label>Vendor Name</label>
+      <input type="text" name="vendorName" required />
+      <div id="quoteItemsContainer"></div>
+      <button type="button" class="btn" onclick="addVendorItem()">+ Add Item to Quote</button>
+      <button type="submit" class="btn">Submit Quote</button>
+    </form>
+  </div>
+  <script src="vendor_script.js"></script>
+</body>
+</html>

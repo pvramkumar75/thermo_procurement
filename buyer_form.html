@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Post Purchase Requirement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Post Purchase Requirement</h2>
+    <form id="buyerForm">
+      <label>Category</label>
+      <select name="category">
+        <option value="Capex">Capex</option>
+        <option value="Maintenance">Maintenance</option>
+        <option value="Spares">Spares</option>
+        <option value="General">General</option>
+      </select>
+      <div id="itemsContainer"></div>
+      <button type="button" class="btn" onclick="addBuyerItem()">+ Add Item</button>
+      <button type="submit" class="btn">Submit Requirement</button>
+    </form>
+  </div>
+  <script src="buyer_script.js"></script>
+</body>
+</html>
