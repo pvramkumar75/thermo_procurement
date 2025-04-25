@@ -23,7 +23,7 @@ document.getElementById('buyerForm').addEventListener('submit', async function(e
   const form = new FormData(e.target);
   const data = Object.fromEntries(form.entries());
   data.formType = "buyer";
-  const response = await fetch("https://script.google.com/macros/s/AKfycbxYotvlwMxQJY2hrl0hiv7fzBx4gNbb5OaLDnybnGFM3wC4tUAIEWW9fmgiV3ELjEP-3w/exec", {
+  const response = await fetch("https://script.google.com/macros/s/AKfycbyJvYVQRbHL0iEOqSKl4mnvAy9djnYNhb7DRMGGr2aty9hAZw4jIBe0kfqFgZ0qZhuQLw/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
