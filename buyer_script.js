@@ -10,7 +10,7 @@ function addBuyerItem() {
     <label>Item Name</label><input name="item${buyerItemCount}_name" required>
     <label>Description</label><textarea name="item${buyerItemCount}_desc"></textarea>
     <label>Specification</label><textarea name="item${buyerItemCount}_spec"></textarea>
-    <label>Attachment (PDF)</label><input type="file" name="item${buyerItemCount}_file" accept="application/pdf">
+    <label>Attachment</label><input type="text" name="item${buyerItemCount}_file" placeholder="File name">
     <label>Quantity</label><input type="number" name="item${buyerItemCount}_qty">
     <label>Delivery Days</label><input type="number" name="item${buyerItemCount}_delivery">
     <label>Payment Terms</label><input name="item${buyerItemCount}_payment">
@@ -18,4 +18,20 @@ function addBuyerItem() {
   `;
   container.appendChild(div);
 }
+
+document.getElementById('buyerForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = new FormData(e.target);
+  const data = Object.fromEntries(form.entries());
+  data.formType = "buyer";
+  const response = await fetch("https://script.google.com/macros/s/AKfycbzJvRcGMFk8IIpTlYVjQpPOnNBQdd-uwIOR86kqDW4teYilf-siHFKlkknQD6LbgSZ6Yw/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  alert("Requirement submitted successfully!");
+});
+
 window.onload = addBuyerItem;

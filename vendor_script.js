@@ -18,4 +18,20 @@ function addVendorItem() {
   `;
   container.appendChild(div);
 }
+
+document.getElementById('vendorForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = new FormData(e.target);
+  const data = Object.fromEntries(form.entries());
+  data.formType = "vendor";
+  const response = await fetch("https://script.google.com/macros/s/AKfycbzJvRcGMFk8IIpTlYVjQpPOnNBQdd-uwIOR86kqDW4teYilf-siHFKlkknQD6LbgSZ6Yw/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  alert("Quote submitted successfully!");
+});
+
 window.onload = addVendorItem;
