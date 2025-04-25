@@ -24,7 +24,7 @@ document.getElementById('vendorForm').addEventListener('submit', async function(
   const form = new FormData(e.target);
   const data = Object.fromEntries(form.entries());
   data.formType = "vendor";
-  const response = await fetch("https://script.google.com/macros/s/AKfycbzJvRcGMFk8IIpTlYVjQpPOnNBQdd-uwIOR86kqDW4teYilf-siHFKlkknQD6LbgSZ6Yw/exec", {
+  const response = await fetch("https://script.google.com/macros/s/AKfycbyR1f97NutO3Vx7LCuYaVK8hC6ZkGzev3gGUbxsgqfVioWLFX6z7NjMSw1WgF1ZG4mX8w/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {

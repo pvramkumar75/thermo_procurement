@@ -10,7 +10,6 @@ function addBuyerItem() {
     <label>Item Name</label><input name="item${buyerItemCount}_name" required>
     <label>Description</label><textarea name="item${buyerItemCount}_desc"></textarea>
     <label>Specification</label><textarea name="item${buyerItemCount}_spec"></textarea>
-    <label>Attachment</label><input type="text" name="item${buyerItemCount}_file" placeholder="File name">
     <label>Quantity</label><input type="number" name="item${buyerItemCount}_qty">
     <label>Delivery Days</label><input type="number" name="item${buyerItemCount}_delivery">
     <label>Payment Terms</label><input name="item${buyerItemCount}_payment">
@@ -24,7 +23,7 @@ document.getElementById('buyerForm').addEventListener('submit', async function(e
   const form = new FormData(e.target);
   const data = Object.fromEntries(form.entries());
   data.formType = "buyer";
-  const response = await fetch("https://script.google.com/macros/s/AKfycbzJvRcGMFk8IIpTlYVjQpPOnNBQdd-uwIOR86kqDW4teYilf-siHFKlkknQD6LbgSZ6Yw/exec", {
+  const response = await fetch("https://script.google.com/macros/s/AKfycbyR1f97NutO3Vx7LCuYaVK8hC6ZkGzev3gGUbxsgqfVioWLFX6z7NjMSw1WgF1ZG4mX8w/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
